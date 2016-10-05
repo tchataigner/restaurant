@@ -1,4 +1,3 @@
-<?php require "../../controller/customers/recup_customer.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +7,7 @@
   </head>
    <body>
   <H1>hello</H1>
-  <form action="../../controller/customers/recup_customer.php" method="POST">
+  <form action="/restaurant/controller/customers/recup_customer.php" method="POST">
   	<input type="text" name="number"><br/>
 	<button type="submit">Edit</button>
   </form>

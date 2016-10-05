@@ -1,5 +1,5 @@
 <?php
-class Item
+class Customer
 {
     private $id;
     private $number;
@@ -73,7 +73,7 @@ class Item
 
     public function setAddress()
     {
-        $this->address = $address
+        $this->address = $address;
         return $this;
     }
 
@@ -109,3 +109,5 @@ class Item
         $this->apartment = $apartment;
         return $this;
     }
+
+}

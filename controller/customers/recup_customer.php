@@ -1,6 +1,6 @@
 <?php
 
-require "/class/class_customer.php";
+require "../../class/class_customer.php";
 
 
 
