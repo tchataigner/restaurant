@@ -5,10 +5,8 @@
         <title>Hello World</title>
   </head>
    <body>
-        <form action="controller/new_order.php" method="POST">
-        	<button type="submit">New order</button>
-        </form>
-        	<a href="/restaurant/index.php?page=menu"><button type="submit" >Edit Item</button></a>
+   			<a href="/index.php?page=customer_number"><button type="submit" >New Order</button></a>
+        	<a href="/index.php?page=menu"><button type="submit" >Edit Item</button></a>
 
     </body>
 </html>
