@@ -8,7 +8,7 @@ class Income
         $user = 'root';
         $password = '';
         $pdo = new PDO($dsn, $user, $password);
-        $sql = 'SELECT Price,item_number FROM ITEM,ORDERS WHERE id_item=Id ;';
+        $sql = "SELECT Price,item_number FROM ITEM,ORDERS WHERE id_item=Id AND date_order=DATE_FORMAT(NOW(),'%Y-%m-%d') ;";
         $sth = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $sth->execute();
         $result = $sth->fetchAll();
