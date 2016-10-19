@@ -12,7 +12,7 @@ class Order
 	{
 		$dsn = 'mysql:dbname=restaurant;host=localhost';
         $user = 'root';
-        $password = '';
+        $password = 'root';
         $pdo = new PDO($dsn, $user, $password);
         $sql = "INSERT INTO  orders (id_client, id_item, item_number, date_order) VALUES (:id_client, :id_item, :item_number, DATE_FORMAT(NOW(),'%Y-%m-%d')) ";
         $sth = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
@@ -28,13 +28,13 @@ class Order
 
 	}
 
-/*
+
 public function resume(){
         $dsn = 'mysql:dbname=restaurant;host=localhost';
         $user = 'root';
         $password = 'root';
         $pdo = new PDO($dsn, $user, $password);
-        $sql = 'SELECT Name,Price FROM ITEM orders, WHERE item.id=:orders.id_item;';
+        $sql = 'SELECT Name,Price FROM ITEM,orders WHERE id=id_item;';
         $sth = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $sth->execute(array(':Name' => $this->Name,
         					'Price' => $this->Price));
@@ -45,7 +45,7 @@ public function resume(){
     }
 
 
-*/
+
 
 	public function setId_item($id_item)
     {
@@ -72,7 +72,7 @@ public function setItem_number($item_number)
     }
 
 
-/*
+
 
 	public function getName()
     {
@@ -88,7 +88,7 @@ public function setItem_number($item_number)
     }
 
 
-*/
+
 }
 
 ?>
