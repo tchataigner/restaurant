@@ -10,6 +10,8 @@ $order->setItem_number($_POST["number_of_item"]);
 $order->setId_client($_POST["client_number"]);
 $order->choose();
 
+$meh=$_POST["number_of_item"];
+
 header('Location: ../../views/new_order/choose_item.php'); 
 
 
