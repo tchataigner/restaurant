@@ -8,8 +8,9 @@
    <body>
   <H1>hello</H1>
   <form action="/restaurant/controller/customers/recup_customer.php" method="POST">
+  	<label for="number">Enter phone number</label>
   	<input type="text" name="number"><br/>
-	<button type="submit">Edit</button>
+	<button type="submit">Submit</button>
   </form>
 <?php $result?>
 

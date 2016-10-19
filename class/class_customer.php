@@ -22,11 +22,28 @@ class Customer
 
         return $result;
     }
+
+      public function new_customer(){
+        $dsn = 'mysql:dbname=restaurant;host=localhost';
+        $user = 'root';
+        $password = '';
+        $pdo = new PDO($dsn, $user, $password);
+        $sql = 'INSERT INTO clients (number, cc, address, postal_code, city, apartment) values (:number, :cc, :address, :postal_code, :city, :apartment)';
+        $sth = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $sth->execute(array(':number' => $this->number,
+                            ':address' => $this->address,
+                            ':cc' => $this->cc,
+                            ':postal_code' => $this->postal_code,
+                            ':city' => $this->city,
+                            ':apartment' => $this->apartment));
+        $sth->execute();
+    }
+
     /**
      * Gets the value of ville.
      *
      * @return mixed
-     */
+     */     
     public function getId()
     {
         return $this->id;
@@ -60,7 +77,7 @@ class Customer
         return $this->cc;
     }
 
-    public function setCC()
+    public function setCC($cc)
     {
         $this->cc = $cc;
         return $this;
@@ -71,7 +88,7 @@ class Customer
         return $this->address;
     }
 
-    public function setAddress()
+    public function setAddress($address)
     {
         $this->address = $address;
         return $this;
@@ -79,12 +96,12 @@ class Customer
 
     public function getPostalCode()
     {
-        return $this->postalcode;
+        return $this->postal_code;
     }
 
-    public function setPostalCode()
+    public function setPostalCode($postal_code)
     {
-        $this->postalcode = $postalcode;
+        $this->postal_code = $postal_code;
         return $this;
     }
 
@@ -93,7 +110,7 @@ class Customer
         return $this->city;
     }
 
-    public function setCity()
+    public function setCity($city)
     {
         $this->city = $city;
         return $this;
@@ -104,7 +121,7 @@ class Customer
         return $this->apartment;
     }
 
-    public function setApartment()
+    public function setApartment($apartment)
     {
         $this->apartment = $apartment;
         return $this;
