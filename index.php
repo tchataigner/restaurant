@@ -8,6 +8,8 @@ if ($page == 'home') {
 	include "/views/menu/list_menu.php";
 } elseif ($page == 'customer_number') {
 	include "/views/customer/recup_customer.php";
+} elseif($page == 'add_details'){
+	include "/views/customer/add_details.php";
 }
 
 ?>
