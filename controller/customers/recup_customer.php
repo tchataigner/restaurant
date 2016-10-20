@@ -1,22 +1,29 @@
 <?php
 
 require "../../class/class_customer.php";
+require "../../class/class_order.php";
 
 
 
-$items = new Customer();
-$items->setNumber($_POST["number"]);
-$results = $items->retrieve_customer();
+$customer = new Customer();
+$customer->setNumber($_POST["number"]);
+$results = $customer->retrieve_customer();
 /* var_dump($results);
 	exit; */
 
 if (empty($results)) {
 
-	 	header('Location: ../../index.php?page=add_details');
+	 header('Location: ../../index.php?page=add_details');
 }
  else {
- 	
- 	header('Location: ../../index.php?page=customer_number');
+ 	session_start();
+ 	$_SESSION['nbr']=$_POST["number"];
+ 	$order = new Order();
+ 	$id_order = $order->getIdOrder();
+ 	$value = $id_order[0];
+ 	$value[0]++;
+ 	$_SESSION['order']=$value[0];
+ 	header('Location: ../../index.php?page=choose_item');
 	/* Here save the number of the customer in the new order table */ 
 	}
 

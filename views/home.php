@@ -1,14 +1,7 @@
 
-<!DOCTYPE html>
-<html>
- <head>
-        <meta charset="utf-8" />
-        <title>Hello World</title>
-  </head>
-   <body>
-   <?php require "/controller/get_income_day.php"; ?>
-   			<a href="/restaurant/index.php?page=customer_number"><button type="submit" >New Order</button></a>
-        	<a href="/restaurant/index.php?page=menu"><button type="submit" >Edit Item</button></a>
-        	<h1><?php echo $income_day; ?></h1>
-    </body>
-</html>
+<?php require "/controller/get_income_day.php"; ?>
+
+<a href="/restaurant/index.php?page=customer_number"><button type="submit" >New Order</button></a>
+<a href="/restaurant/index.php?page=menu"><button type="submit" >Edit Item</button></a>
+
+<h1><?php echo $income_day; ?></h1>

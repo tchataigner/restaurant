@@ -1,12 +1,13 @@
 <?php
 
-require "../../class/class_order.php";
+require "/class/class_order.php";
 
 
 
 $orders = new Order();
-$results = $orders->resume();
 
+$orders->setId_order( $_SESSION['order']);
+$results = $orders->resume();
 
 
 ?>

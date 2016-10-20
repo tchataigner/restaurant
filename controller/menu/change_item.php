@@ -11,5 +11,5 @@ $item->setPrice($_POST["price"]);
 $item->setDetails($_POST["details"]);
 $results = $item->change();
 
-
+header('Location: /restaurant/index.php?page=menu'); 
  ?>
