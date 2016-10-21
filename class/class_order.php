@@ -14,7 +14,7 @@ class Order
         $user = 'root';
         $password = '';
         $pdo = new PDO($dsn, $user, $password);
-        $sql = "INSERT INTO  orders (id_client, id_item, item_number, date_order, id_order) VALUES (:id_client, :id_item, :item_number, DATE_FORMAT(NOW(),'%Y-%m-%d'), :id_order) ";
+        $sql = "INSERT INTO  orders (id_client, id_item, item_number, date_order, id_order) VALUES (:id_client, :id_item, :item_number, DATE_FORMAT(NOW(),'%Y-%m-%d'), :id_order); ";
         $sth = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $sth->execute(array(':id_item' => $this->id_item,
         					':item_number' => $this->item_number,

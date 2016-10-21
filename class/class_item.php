@@ -5,6 +5,7 @@ class Item
     private $name;
     private $price;
     private $details;
+    
     public function change()
     {
         $dsn = 'mysql:dbname=restaurant;host=localhost';
@@ -19,6 +20,30 @@ class Item
                             ':details' => $this->details));
 
         $sth->execute();
+        }
+
+    public function add_item()
+    {
+        $dsn = 'mysql:dbname=restaurant;host=localhost';
+        $user = 'root';
+        $password = '';
+        $pdo = new PDO($dsn, $user, $password);
+        $sql = "INSERT INTO ITEM (name, price, details) VALUES (:name, :price, :details);";
+        $sth = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $sth->execute(array(':name' => $this->name,
+                            ':price' => $this->price,
+                            ':details' => $this->details));
+        }
+
+    public function delete_item()
+    {
+        $dsn = 'mysql:dbname=restaurant;host=localhost';
+        $user = 'root';
+        $password = '';
+        $pdo = new PDO($dsn, $user, $password);
+        $sql = "DELETE FROM ITEM WHERE id=:id;";
+        $sth = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $sth->execute(array(':id' => $this->id));
         }
 
     public function load_table(){
