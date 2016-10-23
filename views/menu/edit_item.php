@@ -1,4 +1,4 @@
-<?php require "/controller/menu/edit_item.php"; ?>
+<?php require "/controller/menu/recup_item.php"; ?>
 
 <form action="/restaurant/controller/menu/change_item.php" method="POST" id="edit_menu">
 <label for="name">Name :</label>

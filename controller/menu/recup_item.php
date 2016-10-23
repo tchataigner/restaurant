@@ -2,12 +2,7 @@
 
 require "/class/class_item.php";
 
-
-
-$items = new Item();
-$results = $items->load_table();
-
-?>
-
-
+$item = new Item();
+$item->setId($_POST["id"]);
+$result = $item->load_item();
 

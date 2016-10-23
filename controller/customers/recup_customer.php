@@ -7,9 +7,8 @@ require "../../class/class_order.php";
 
 $customer = new Customer();
 $customer->setNumber($_POST["number"]);
-$results = $customer->retrieve_customer();
-/* var_dump($results);
-	exit; */
+$result = $customer->retrieve_customer();
+
 
 if (empty($results)) {
 

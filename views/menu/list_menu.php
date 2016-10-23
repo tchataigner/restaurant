@@ -1,6 +1,6 @@
 <?php 
 
-require "/controller/menu/recup_item.php";
+require "/controller/menu/all_item.php";
 
 for ($i=0; $i < count($results); $i++) { 
 	echo $results[$i][1];
